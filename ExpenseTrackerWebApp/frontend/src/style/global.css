@@ -1,0 +1,64 @@
+/* src/styles/global.css */
+
+/* Reset default browser styles (Tailwind already does a lot of this) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styles */
+  body {
+    font-family: 'Inter', sans-serif; /* Use a font or set a fallback */
+    background-color: #f9fafb; /* Tailwind's default light background color */
+    color: #1f2937; /* Dark text color (default Tailwind gray-800) */
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+  }
+  
+  /* Links */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Buttons */
+  button {
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  /* Utility Class for Container Width */
+  .container {
+    width: 100%;
+    max-width: 1200px; /* Adjust based on design */
+    margin: 0 auto;
+    padding: 0 1rem; /* Add padding for the container sides */
+  }
+  
+  /* Custom scrollbar styling (Optional) */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 4px;
+  }
+  
+  /* Responsive Image Styling */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Utility for Text Truncation */
+  .truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
