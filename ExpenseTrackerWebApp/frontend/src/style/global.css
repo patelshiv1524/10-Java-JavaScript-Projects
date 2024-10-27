@@ -1,64 +1,74 @@
-/* src/styles/global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Reset default browser styles (Tailwind already does a lot of this) */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body Styles */
-  body {
-    font-family: 'Inter', sans-serif; /* Use a font or set a fallback */
-    background-color: #f9fafb; /* Tailwind's default light background color */
-    color: #1f2937; /* Dark text color (default Tailwind gray-800) */
-  }
-  
-  /* Headings */
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-  }
-  
-  /* Links */
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  /* Buttons */
-  button {
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  
-  /* Utility Class for Container Width */
-  .container {
-    width: 100%;
-    max-width: 1200px; /* Adjust based on design */
-    margin: 0 auto;
-    padding: 0 1rem; /* Add padding for the container sides */
-  }
-  
-  /* Custom scrollbar styling (Optional) */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #bbb;
-    border-radius: 4px;
-  }
-  
-  /* Responsive Image Styling */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Utility for Text Truncation */
-  .truncate {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
+/* -------------------------------
+   Global Styles - Custom Additions
+---------------------------------- */
+
+/* Reset default browser styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global body styles */
+body {
+  @apply bg-gray-100 text-gray-800 antialiased;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* Headings with custom font */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading font-bold text-gray-900;
+  margin-bottom: 0.75rem;
+}
+
+/* Links */
+a {
+  @apply text-primary font-medium hover:underline;
+}
+
+/* Container class for common layout */
+.container {
+  @apply max-w-screen-lg mx-auto px-4;
+}
+
+/* Buttons */
+.btn {
+  @apply inline-block px-6 py-2 bg-primary text-white font-medium rounded-lg shadow-md;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  @apply bg-blue-600;
+}
+
+/* Form Inputs */
+input, select, textarea {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary;
+}
+
+/* Utility Class for Text Truncation */
+.truncate {
+  @apply truncate;
+}
+
+/* Utility Class for Card Component */
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 mb-4;
+}
+
+/* Utility Class for Gradient Background */
+.bg-gradient {
+  @apply bg-gradient-to-r from-primary to-accent text-white;
+}
+
+/* Footer Styling */
+footer {
+  @apply bg-gray-800 text-gray-300 text-center py-4;
+}
